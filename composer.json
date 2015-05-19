@@ -27,6 +27,7 @@
         "twbs/bootstrap": "dev-master",
         "afarkas/html5shiv": "dev-master",
         "rogeriopradoj/respond": "1.4.2",
-        "components/jquery": "1.11.3"
+        "components/jquery": "1.11.3",
+        "angular-ui/bootstrap": "dev-master"
     }
 }
