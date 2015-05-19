@@ -1,0 +1,28 @@
+{
+    "name": "usf/e911",
+    "description": "University of South Florida 911 and E911 Disclosure, Notice, and Acknowlwledgement",
+    "authors": [
+        {
+            "name": "James Jones",
+            "email": "james@mail.usf.edu",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Api": "src/",
+            "Test": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": [
+        { 
+            "type":"vcs",
+            "url":"https://github.com/USF-IT/usf-idm-database.git"
+        }
+    ],
+    "require": {
+        "usf-it/usf-idm-database": "dev-master"
+    }
+}
