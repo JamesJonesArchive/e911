@@ -23,6 +23,10 @@
         }
     ],
     "require": {
-        "usf-it/usf-idm-database": "dev-master"
+        "usf-it/usf-idm-database": "dev-master",
+        "twbs/bootstrap": "dev-master",
+        "afarkas/html5shiv": "dev-master",
+        "rogeriopradoj/respond": "1.4.2",
+        "components/jquery": "1.11.3"
     }
 }
