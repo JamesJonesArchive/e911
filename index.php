@@ -16,6 +16,7 @@ try {
         <title>University of South Florida 911 and E911 Disclosure, Notice, and Acknowledgement</title>
         <!-- Bootstrap -->
         <link href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/e911.css" rel="stylesheet">
         
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
