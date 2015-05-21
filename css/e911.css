@@ -45,3 +45,7 @@ h2.e911 {
     left: 50%; /* IMPORTANT */
     position: absolute;
 }
+.col-centered{
+    float: block;
+    margin: 0 auto;
+}

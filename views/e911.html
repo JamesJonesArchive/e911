@@ -33,7 +33,9 @@
     <br>
     <div class="row panel panel-default">
         <div class="col-md-1">
-            <button type="button" class="btn btn-sm" ng-click="acknowledge(1)" ng-class="{'btn-primary': isAcknowledged(1) === false, 'btn-default': isAcknowledged(1) === true}">I Acknowledge</button>
+            <span>
+                <button type="button" class="btn btn-sm" ng-click="acknowledge(1)" ng-class="{'btn-primary': isAcknowledged(1) === false, 'btn-default': isAcknowledged(1) === true}">I Acknowledge</button>                
+            </span>
         </div>
         <div class="col-md-11">
             EMERGENCY PERSONNEL MAY NOT BE ABLE TO IDENTIFY YOUR PHONE NUMBER IN ORDER TO CALL YOU BACK. PSAP and emergency personnel may not be able to identify your phone number in order to call you back 
@@ -69,7 +71,7 @@
         </div>
     </div>
     <div class="row panel panel-default">
-        <div class="col-md-1">
+        <div class="col-md-1 col-centered">
             <button type="button" class="btn btn-primary btn-sm " ng-click="acknowledge(5)">I Acknowledge</button>
         </div>
         <div class="col-md-11">

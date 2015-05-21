@@ -23,6 +23,7 @@
         }
     ],
     "require": {
+        "usf-it/usf-auth": "dev-develop",
         "usf-it/usf-idm-database": "dev-master",
         "twbs/bootstrap": "dev-master",
         "afarkas/html5shiv": "dev-master",
