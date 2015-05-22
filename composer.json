@@ -9,9 +9,8 @@
         }
     ],
     "autoload": {
-        "psr-0": {
-            "Api": "src/",
-            "Test": "tests/"
+        "psr-4" : {
+            "USF\\e911\\" : "src/"
         }
     },
     "minimum-stability": "dev",
@@ -23,12 +22,19 @@
         }
     ],
     "require": {
+        "php": ">=5.4",
+        "slim/slim": "2.5.*",
         "usf-it/usf-auth": "dev-develop",
         "usf-it/usf-idm-database": "dev-master",
         "twbs/bootstrap": "dev-master",
         "afarkas/html5shiv": "dev-master",
         "rogeriopradoj/respond": "1.4.2",
         "components/jquery": "1.11.3",
-        "angular-ui/bootstrap": "dev-master"
+        "angular-ui/bootstrap": "dev-master",
+        "shkm/jsend": ">1.2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.1.*",
+        "squizlabs/php_codesniffer": "2.1.*"
     }
 }
