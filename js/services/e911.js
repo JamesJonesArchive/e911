@@ -5,7 +5,7 @@
         .factory('e911Service', ['$http', function ($http) {
             var service = {
                 e911sign: function (id) {
-                    return $http.post('/src/e911sign', {id: id});
+                    return $http.post('src/e911sign', {id: id});
                 }
             };
             return service;
