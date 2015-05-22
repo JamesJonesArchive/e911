@@ -10,7 +10,7 @@
     ],
     "autoload": {
         "psr-4" : {
-            "USF\\e911\\" : "src/"
+            "USF\\e911\\" : "api/"
         }
     },
     "minimum-stability": "dev",
