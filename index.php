@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <?php
-use USF\auth;
 try {
     // Initialize Composer autoloader
     if (!file_exists($autoload = __DIR__ . '/vendor/autoload.php')) {
         throw new \Exception('Composer dependencies not installed. Run `make install --directory app/api`');
     }
     require_once $autoload;
-    use USF\auth;
     ?>
 <html lang="en" ng-app="e911App">
     <head>

@@ -14,6 +14,10 @@
                 templateUrl: 'views/e911.html',
                 controller: 'e911Ctrl'
             })
+            .when('/:id', {
+                templateUrl: 'views/e911.html',
+                controller: 'e911Ctrl'
+            })
             .otherwise({
                 redirectTo: '/'
             });
