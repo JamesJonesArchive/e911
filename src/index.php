@@ -29,5 +29,11 @@ try {
     $app->run();
     
 } catch(\Exception $ex) {
-    
+    http_response_code(500);
+    header('Content-Type: application/json');
+    echo json_encode(array(
+        'status' => 500,
+        'statusText' => 'Internal Server Error',
+        'description' => $e->getMessage(),
+    ));    
 }
