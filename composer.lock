@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bdecd412c161a96db19fa68b2d400525",
+    "hash": "97e6c21a1af10e81762a5dc0b9ac772c",
     "packages": [
         {
             "name": "acquia/http-hmac-php",
