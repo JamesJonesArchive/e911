@@ -6,14 +6,23 @@
         if('id' in $routeParams) {
             $scope.id = $routeParams.id;
         }
-        $scope.acknowlegements = [];
-        $scope.acknowledge = function(type) {
-            if(!(type in $scope.acknowlegements)) {
-                $scope.acknowlegements.push(type);
-            }
-        };
-        $scope.isAcknowledged = function(type) {
-            return (type in $scope.acknowlegements);
+        $scope.sections = {
+            firstTop: ['panel', 'panel-default'],
+            firstBottom: ['panel-body'],
+            firstDisabled: false,
+            secondTop: ['well'],
+            secondBottom: [],
+            secondDisabled: true,
+            thirdTop: ['well'],
+            thirdBottom: [],
+            thirdDisabled: true,
+            fourthTop: ['well'],
+            fourthBottom: [],
+            fourthDisabled: true,
+            fifthTop: ['well'],
+            fifthBottom: [],
+            fifthDisabled: true,
+            submitDisabled: true
         };
         $scope.e911sign = function() {
             // alert($scope.id);
@@ -26,6 +35,70 @@
               // called asynchronously if an error occurs
               // or server returns response with an error status.
             });
+        };
+        $scope.acknowledgeClasses = function(type) {
+            switch(type) {
+                case "first":
+                    $scope.sections.firstTop.pop('panel');
+                    $scope.sections.firstTop.pop('panel-default');
+                    $scope.sections.firstTop.push('well');
+                    $scope.sections.firstBottom.pop('panel-body');
+                    $scope.sections.firstDisabled = true;
+                    $scope.sections.secondTop.pop('well');
+                    $scope.sections.secondTop.push('panel');
+                    $scope.sections.secondTop.push('panel-default');
+                    $scope.sections.secondBottom.push('panel-body');
+                    $scope.sections.secondDisabled = false;
+                    break;
+                case "second":
+                    $scope.sections.secondTop.pop('panel');
+                    $scope.sections.secondTop.pop('panel-default');
+                    $scope.sections.secondTop.push('well');
+                    $scope.sections.secondBottom.pop('panel-body');
+                    $scope.sections.secondDisabled = true;
+                    
+                    $scope.sections.thirdTop.pop('well');
+                    $scope.sections.thirdTop.push('panel');
+                    $scope.sections.thirdTop.push('panel-default');
+                    $scope.sections.thirdBottom.push('panel-body');
+                    $scope.sections.thirdDisabled = false;
+                    break;
+                case "third":
+                    $scope.sections.thirdTop.pop('panel');
+                    $scope.sections.thirdTop.pop('panel-default');
+                    $scope.sections.thirdTop.push('well');
+                    $scope.sections.thirdBottom.pop('panel-body');
+                    $scope.sections.thirdDisabled = true;
+                    
+                    $scope.sections.fourthTop.pop('well');
+                    $scope.sections.fourthTop.push('panel');
+                    $scope.sections.fourthTop.push('panel-default');
+                    $scope.sections.fourthBottom.push('panel-body');
+                    $scope.sections.fourthDisabled = false;
+                    break;
+                case "fourth":
+                    $scope.sections.fourthTop.pop('panel');
+                    $scope.sections.fourthTop.pop('panel-default');
+                    $scope.sections.fourthTop.push('well');
+                    $scope.sections.fourthBottom.pop('panel-body');
+                    $scope.sections.fourthDisabled = true;
+                    
+                    $scope.sections.fifthTop.pop('well');
+                    $scope.sections.fifthTop.push('panel');
+                    $scope.sections.fifthTop.push('panel-default');
+                    $scope.sections.fifthBottom.push('panel-body');
+                    $scope.sections.fifthDisabled = false;
+                    break;
+                case "fifth":
+                    $scope.sections.fifthTop.pop('panel');
+                    $scope.sections.fifthTop.pop('panel-default');
+                    $scope.sections.fifthTop.push('well');
+                    $scope.sections.fifthBottom.pop('panel-body');
+                    $scope.sections.fifthDisabled = true;
+                    
+                    $scope.sections.submitDisabled = false;
+                    break;
+            }
         };
     }]);
     
