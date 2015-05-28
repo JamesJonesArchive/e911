@@ -8,9 +8,9 @@
 
 namespace USF\e911;
 
-use \USF\IdM\UsfEncryption;
 use \JSend\JSendResponse;
 use \USF\IdM\UsfConfig;
+use \GuzzleHttp\Client;
 
 /**
  * Description of e911services
@@ -28,22 +28,17 @@ class e911services extends \USF\IdM\UsfNamsDatabase {
      * @return JSendResponse
      */
     public function e911sign($encryptbadge) {
-        //Access configuration values from default location (/usr/local/etc/idm_config)
         $config = new UsfConfig();
-        $badge = (int) substr(UsfEncryption::decrypt($config->aesConfig->e911, $encryptbadge),8);
-        $alreadysigned = $this->hase911signed($badge);
-        if($alreadysigned->getData()["signed"]) {
-            return new JSendResponse('success', [
-                "signed" => false
-            ]);
-        } else {
-            $this->db->insert("e911", [
-                "badge" => $badge
-            ]);
-            return new JSendResponse('success', [
-                "signed" => true
-            ]);
-        }
+        $client = new Client([
+            // You can set any number of default request options.
+            'timeout'  => 2.0,
+        ]);
+        return new JSendResponse('success', $client->post($config->e911Config->unaService, [
+            'json' => [
+                'service' => 'e911sign',
+                'id' => $encryptbadge
+            ]
+        ])->json());        
     }
     /**
      * Checks to see if the E911 Disclosure was already signed
