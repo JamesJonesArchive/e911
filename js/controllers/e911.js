@@ -5,7 +5,6 @@
     .controller('e911Ctrl', ['$scope','$window','$location','$routeParams','e911Service', function ($scope,$window,$location,$routeParams,e911Service) { 
         if('id' in $routeParams) {
             $scope.id = $routeParams.id;
-            $scope.una = $routeParams.una;
         }
         $scope.sections = {
             firstTop: ['panel', 'panel-default'],
@@ -26,22 +25,23 @@
             submitDisabled: true
         };
         $scope.e911sign = function() {
-                $window.parent.jQuery('.jqmOverlay').css('display', 'none');
-                $window.parent.jQuery('#e911div').css('display', 'none');
-                // $window.parent.jQuery('#it_main').css('display', 'none').css('display','block');
-            
-// $window.parent.jQuery('a#e911_close').trigger('click');
-//            e911Service.e911sign($scope.una,$scope.id).
-//            success(function(data, status, headers, config) {
-//                
-//                
-//              // this callback will be called asynchronously
-//              // when the response is available
-//            }).
-//            error(function(data, status, headers, config) {
-//              // called asynchronously if an error occurs
-//              // or server returns response with an error status.
-//            });
+            e911Service.e911sign($scope.id).
+            success(function(data, status, headers, config) {
+                
+                alert(JSON.stringify(data));
+                // this callback will be called asynchronously
+                // when the response is available
+                // $window.parent.jQuery('.jqmOverlay').css('display', 'none');
+                // $window.parent.jQuery('#e911div').css('display', 'none');
+                // $window.parent.jQuery('#it_main').css('display', 'none').css('display','block');            
+                // $window.parent.jQuery('a#e911_close').trigger('click');              
+            }).
+            error(function(data, status, headers, config) {
+                alert("Error!");
+                alert(JSON.stringify(data));
+              // called asynchronously if an error occurs
+              // or server returns response with an error status.
+            });
         };
         $scope.acknowledgeClasses = function(type) {
             switch(type) {
