@@ -17,10 +17,7 @@ use \GuzzleHttp\Client;
  *
  * @author james
  */
-class e911services extends \USF\IdM\UsfNamsDatabase {
-    function __construct() {
-        parent::__construct();
-    }
+class e911services {
     /**
      * Signs the disclosure by badge
      * 
@@ -33,25 +30,20 @@ class e911services extends \USF\IdM\UsfNamsDatabase {
             // You can set any number of default request options.
             'timeout'  => 2.0,
         ]);
-        return new JSendResponse('success', $client->post($config->e911Config->unaService, [
-            'json' => [
-                'service' => 'e911sign',
-                'id' => $encryptbadge
-            ]
-        ])->json());        
-    }
-    /**
-     * Checks to see if the E911 Disclosure was already signed
-     * 
-     * @param type $badge
-     * @return JSendResponse
-     */
-    public function hase911signed($badge) {
-        $count = $this->db->count("e911", [
-            "badge" => $badge
-        ]);
-        return new JSendResponse('success', [
-            "signed" => ($count > 0)
-        ]);
+        try {
+            $r = $client->post($config->e911Config['unaService'], [
+                'body' => [
+                    'service' => 'e911sign',
+                    'request' => json_encode([ 'id' => $encryptbadge ])
+                ]
+            ]);
+            return new JSendResponse('success', json_decode((string) $r->getBody(),true));        
+        } catch (Exception $e) {
+            return new JSendResponse('fail', [
+                'request' => $e->getRequest(),
+                'response' => ($e->hasResponse())?$e->getResponse():"",
+                'message' => $e->getMessage()
+            ]); 
+        }
     }
 }
