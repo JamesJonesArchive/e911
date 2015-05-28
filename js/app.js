@@ -14,10 +14,6 @@
                 templateUrl: 'views/e911.html',
                 controller: 'e911Ctrl'
             })
-            .when('/thanks', {
-                templateUrl: 'views/thanks.html',
-                controller: 'thanksCtrl'
-            })
             .otherwise({
                 redirectTo: '/'
             });
