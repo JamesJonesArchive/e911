@@ -31,7 +31,6 @@ try {
         <script src="components/angularjs/angular-cookies.js"></script>
         <script src="js/app.js"></script>
         <script src="js/controllers/e911.js"></script>
-        <script src="js/controllers/thanks.js"></script>
         <script src="js/services/e911.js"></script>
     </head>
     <body>
