@@ -5,7 +5,7 @@
         .factory('e911Service', ['$http', function ($http) {
             var service = {
                 e911sign: function (una,id) {
-                    return $http.post(una, {id: id,service: "e911sign"});
+                    return $http.post('api/e911sign', {id: id});
                 }
             };
             return service;
