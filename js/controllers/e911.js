@@ -27,8 +27,8 @@
         $scope.e911sign = function() {
             e911Service.e911sign($scope.id).
             success(function(data, status, headers, config) {
-                
-                alert(JSON.stringify(data));
+                $window.parent.postMessage("Hello From IFrame", "*");
+                // alert(JSON.stringify(data));
                 // this callback will be called asynchronously
                 // when the response is available
                 // $window.parent.jQuery('.jqmOverlay').css('display', 'none');
