@@ -2,7 +2,7 @@
     'use strict';
     angular
     .module('e911App')
-    .controller('e911Ctrl', ['$scope','$window','$location','$routeParams','e911Service', function ($scope,$window,$location,$routeParams,e911Service) { 
+    .controller('e911Ctrl', ['$scope','$window','$routeParams','e911Service', function ($scope,$window,$routeParams,e911Service) { 
         if('id' in $routeParams) {
             $scope.id = $routeParams.id;
         }
@@ -47,6 +47,7 @@
                     $scope.sections.secondTop.push('panel-default');
                     $scope.sections.secondBottom.push('panel-body');
                     $scope.sections.secondDisabled = false;
+                    $window.document.getElementById('acknowledge2').scrollIntoView();
                     break;
                 case "second":
                     $scope.sections.secondTop.pop('panel');
@@ -60,6 +61,7 @@
                     $scope.sections.thirdTop.push('panel-default');
                     $scope.sections.thirdBottom.push('panel-body');
                     $scope.sections.thirdDisabled = false;
+                    $window.document.getElementById('acknowledge3').scrollIntoView();
                     break;
                 case "third":
                     $scope.sections.thirdTop.pop('panel');
@@ -73,6 +75,7 @@
                     $scope.sections.fourthTop.push('panel-default');
                     $scope.sections.fourthBottom.push('panel-body');
                     $scope.sections.fourthDisabled = false;
+                    $window.document.getElementById('acknowledge4').scrollIntoView();
                     break;
                 case "fourth":
                     $scope.sections.fourthTop.pop('panel');
@@ -86,6 +89,7 @@
                     $scope.sections.fifthTop.push('panel-default');
                     $scope.sections.fifthBottom.push('panel-body');
                     $scope.sections.fifthDisabled = false;
+                    $window.document.getElementById('acknowledge5').scrollIntoView();
                     break;
                 case "fifth":
                     $scope.sections.fifthTop.pop('panel');
@@ -95,6 +99,7 @@
                     $scope.sections.fifthDisabled = true;
                     
                     $scope.sections.submitDisabled = false;
+                    $window.document.getElementById('acknowledgeSubmit').scrollIntoView();
                     break;
             }
         };
