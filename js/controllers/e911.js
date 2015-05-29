@@ -26,21 +26,12 @@
         };
         $scope.e911sign = function() {
             e911Service.e911sign($scope.id).
-            success(function(data, status, headers, config) {
-                $window.parent.postMessage("Hello From IFrame", "*");
-                // alert(JSON.stringify(data));
-                // this callback will be called asynchronously
-                // when the response is available
-                // $window.parent.jQuery('.jqmOverlay').css('display', 'none');
-                // $window.parent.jQuery('#e911div').css('display', 'none');
-                // $window.parent.jQuery('#it_main').css('display', 'none').css('display','block');            
-                // $window.parent.jQuery('a#e911_close').trigger('click');              
+            success(function(data, status, headers, config) {                
+                $window.parent.postMessage(JSON.stringify({ e911: data }), "*");
             }).
             error(function(data, status, headers, config) {
-                alert("Error!");
-                alert(JSON.stringify(data));
-              // called asynchronously if an error occurs
-              // or server returns response with an error status.
+                alert("Error! E911 Acknowledgement could not be updated");
+                $window.parent.postMessage(JSON.stringify({ e911: data }), "*");
             });
         };
         $scope.acknowledgeClasses = function(type) {
