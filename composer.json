@@ -8,9 +8,13 @@
             "role": "Developer"
         }
     ],
+    "config": {
+        "vendor-dir": "app/vendor",
+        "component-dir": "app/components"
+    },
     "autoload": {
         "psr-4" : {
-            "USF\\e911\\" : "api/"
+            "USF\\e911\\" : "app/api/"
         }
     },
     "minimum-stability": "dev",
@@ -25,10 +29,6 @@
         "php": ">=5.4",
         "slim/slim": "2.5.*",
         "usf-it/usf-idm-common": "dev-master",
-        "twbs/bootstrap": "dev-master",
-        "afarkas/html5shiv": "dev-master",
-        "rogeriopradoj/respond": "1.4.2",
-        "components/jquery": "1.11.3",
         "angular-ui/bootstrap": "dev-master",
         "shkm/jsend": ">1.2.0",
         "guzzlehttp/guzzle": "~5.0"

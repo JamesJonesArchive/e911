@@ -1,6 +1,8 @@
-/vendor/
+/app/vendor/
 .idea/
 /nbproject/
 *.iml
 /target/
-/components/
+/app/components/
+/node_modules/
+/app/bower_components/

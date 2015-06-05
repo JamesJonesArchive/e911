@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit bootstrap="./test/bootstrap.php" colors="true">
+<phpunit bootstrap="./app/api/tests/bootstrap.php" colors="true">
     <php>
         <server name="UNA_SERVICE" value="http://localhost/una" />
         <server name="ENCRYPT_BADGE" value="ABCDEFGHIJKLMNOPQRSTUVWXYZ" />
     </php>
     <testsuites>
         <testsuite name="Application Test Suite">
-            <directory>./test/</directory>
+            <directory>./app/api/tests/</directory>
         </testsuite>
     </testsuites>
 </phpunit>

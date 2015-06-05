@@ -25,14 +25,26 @@
             submitDisabled: true
         };
         $scope.e911sign = function() {
-            e911Service.e911sign($scope.id).
-            success(function(data, status, headers, config) {                
-                $window.parent.postMessage(JSON.stringify({ e911: data }), "*");
-            }).
-            error(function(data, status, headers, config) {
+            e911Service.e911sign($scope.id).then(function(data){
+                $scope.e911 = { e911: data.data };
+                $window.parent.postMessage(JSON.stringify($scope.e911), "*");
+            },function(response) {
+                var data = response.data,
+                    status = response.status;
+                $scope.e911 = { e911: data };
                 alert("Error! E911 Acknowledgement could not be updated");
-                $window.parent.postMessage(JSON.stringify({ e911: data }), "*");
+                $window.parent.postMessage(JSON.stringify($scope.e911), "*");
             });
+//            e911Service.e911sign($scope.id).
+//            success(function(data, status, headers, config) { 
+//                $scope.e911 = { e911: data };
+//                $window.parent.postMessage(JSON.stringify($scope.e911), "*");
+//            }).
+//            error(function(data, status, headers, config) {
+//                $scope.e911 = { e911: data };
+//                alert("Error! E911 Acknowledgement could not be updated");
+//                $window.parent.postMessage(JSON.stringify($scope.e911), "*");
+//            });
         };
         $scope.acknowledgeClasses = function(type) {
             switch(type) {
