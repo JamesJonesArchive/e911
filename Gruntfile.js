@@ -470,11 +470,11 @@ module.exports = function (grunt) {
   grunt.registerTask('test', [
     'clean:server',
     'shell:phpTest',
-    'phpunit',
     'concurrent:test',
     'autoprefixer',
     'connect:test',
-    'karma'
+    'karma',
+    'phpunit'
   ]);
 
   grunt.registerTask('build', [

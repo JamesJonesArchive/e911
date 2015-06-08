@@ -13,11 +13,11 @@ describe('Service: e911', function () {
     }));
     
     it('testing e911 sigining requests', function () {
-        httpBackend.whenPOST("api/e911sign").respond([
+        httpBackend.whenPOST("api/e911sign").respond(
             {"e911sign":true}
-        ]);
+        );
         e911Service.e911sign('ABCDEFGHIJKLMNOPQRSTUVWXYZ').then(function(response) {
-            expect(response.e911sign).toEqual(true);
+            expect(response.data.e911sign).toEqual(true);
         });
         httpBackend.flush();
     });
