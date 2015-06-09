@@ -9,8 +9,8 @@
         }
     ],
     "config": {
-        "vendor-dir": "app/vendor",
-        "component-dir": "app/components"
+        "vendor-dir": "app/api/vendor",
+        "component-dir": "app/api/components"
     },
     "autoload": {
         "psr-4" : {

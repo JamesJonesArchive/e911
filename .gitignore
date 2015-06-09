@@ -1,9 +1,10 @@
-/app/vendor/
+/app/api/vendor/
 .idea/
 /nbproject/
 *.iml
 /target/
-/app/components/
+/app/api/components/
 /node_modules/
 /app/bower_components/
 /.tmp/
+/dist/

@@ -372,14 +372,15 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>',
           dest: '<%= yeoman.dist %>',
           src: [
-            'api/{{config,src,vendor}/**,index.php,.htaccess}',
+            'api/{{config,src,vendor,components}/**,index.php,e911services.php,.htaccess}',
             '*.{ico,png,txt}',
             '.htaccess',
             '*.html',
             '*.js',
             'views/{,*/}*.html',
             'images/{,*/}*.{webp}',
-            'fonts/*'
+            'fonts/*',
+            'bower_components/**'
           ]
         }, {
           expand: true,
@@ -479,7 +480,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    'shell:phpUpdate',
+    // 'shell:phpUpdate',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
@@ -487,7 +488,7 @@ module.exports = function (grunt) {
     'concat',
     'ngmin',
     'copy:dist',
-    'cdnify',
+    // 'cdnify',
     'cssmin',
     'uglify',
     'filerev',
