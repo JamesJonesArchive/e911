@@ -34,6 +34,6 @@ try {
     echo json_encode(array(
         'status' => 500,
         'statusText' => 'Internal Server Error',
-        'description' => $e->getMessage(),
+        'description' => $ex->getMessage(),
     ));    
 }
