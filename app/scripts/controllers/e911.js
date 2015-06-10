@@ -32,7 +32,7 @@
                 var data = response.data,
                     status = response.status;
                 $scope.e911 = { e911: data };
-                alert("Error! E911 Acknowledgement could not be updated");
+                alert("Error! E911 Acknowledgement could not be updated"+JSON.stringify(response));
                 $window.parent.postMessage(JSON.stringify($scope.e911), "*");
             });
 //            e911Service.e911sign($scope.id).

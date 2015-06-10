@@ -170,9 +170,15 @@ module.exports = function (grunt) {
             dir: '<%= yeoman.app %>/api/tests/'
         },
         options: {
-            bin: '<%= yeoman.app %>/vendor/bin/phpunit',
+            bin: '<%= yeoman.app %>/api/vendor/bin/phpunit',
             configuration: 'phpunit.xml',
             colors: true
+        }
+    },
+    composer: {
+        options: {
+            usePhp: false,
+            cwd: 'app/api'
         }
     },
     // Make sure code styles are up to par and there are no obvious mistakes
@@ -444,6 +450,7 @@ module.exports = function (grunt) {
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
       return grunt.task.run([
+        'composer:update',
         'build',
         'configureProxies',
         'php:dist',
@@ -453,6 +460,7 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
+      'composer:update',
       'wiredep',
       'concurrent:server',
       'autoprefixer',
@@ -470,6 +478,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('test', [
     'clean:server',
+    'composer:update',
     'shell:phpTest',
     'concurrent:test',
     'autoprefixer',
@@ -481,6 +490,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     // 'shell:phpUpdate',
+    'composer:update',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
@@ -497,6 +507,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
+    'composer:update',
     'newer:jshint'
  //   'test',
  //   'build'

@@ -9,12 +9,12 @@
         }
     ],
     "config": {
-        "vendor-dir": "app/api/vendor",
-        "component-dir": "app/api/components"
+        "vendor-dir-legacy": "app/api/vendor",
+        "component-dir-legacy": "app/api/components"
     },
     "autoload": {
         "psr-4" : {
-            "USF\\e911\\" : "app/api/"
+            "USF\\e911\\" : "src/"
         }
     },
     "minimum-stability": "dev",
