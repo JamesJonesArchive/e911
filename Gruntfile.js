@@ -379,33 +379,44 @@ module.exports = function (grunt) {
     // Copies remaining files to places other tasks can use
     copy: {
       dist: {
-        files: [{
           expand: true,
           dot: true,
           cwd: '<%= yeoman.app %>',
-          dest: '<%= yeoman.dist %>',
-          src: [
-            'api/{{config,src,vendor,components}/**,index.php,e911services.php,.htaccess}',
-            '*.{ico,png,txt}',
-            '.htaccess',
-            '*.html',
-            '*.js',
-            'views/{,*/}*.html',
-            'images/{,*/}*.{webp}',
-            'fonts/*',
-            'bower_components/**'
-          ]
-        }, {
-          expand: true,
-          cwd: '.tmp/images',
-          dest: '<%= yeoman.dist %>/images',
-          src: ['generated/*']
-        }, {
-          expand: true,
-          cwd: 'bower_components/bootstrap/dist',
-          src: 'fonts/*',
-          dest: '<%= yeoman.dist %>'
-        }]
+          src: '**',
+          dest: '<%= yeoman.dist %>/'
+      },
+      dist2: {
+        files: [
+          {
+            expand: true,
+            dot: true,
+            cwd: '<%= yeoman.app %>',
+            dest: '<%= yeoman.dist %>',
+            src: [
+              'api/{{config,src,vendor,components}/**,index.php,e911services.php,.htaccess}',
+              '*.{ico,png,txt}',
+              '.htaccess',
+              '*.html',
+              '*.js',
+              'views/{,*/}*.html',
+              'images/{,*/}*.{webp}',
+              'fonts/*',
+              'bower_components/**'
+            ]
+          }, 
+          {
+            expand: true,
+            cwd: '.tmp/images',
+            dest: '<%= yeoman.dist %>/images',
+            src: ['generated/*']
+          }, 
+          {
+            expand: true,
+            cwd: 'bower_components/bootstrap/dist',
+            src: 'fonts/*',
+            dest: '<%= yeoman.dist %>'
+          }
+        ]
       },
       styles: {
         expand: true,
