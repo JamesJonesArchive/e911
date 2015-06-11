@@ -87,6 +87,13 @@ module.exports = function (grunt) {
       phpTest: {
         files: ['<%= yeoman.app %>/api/{,{config,src,tests}/**/}/*'],
         tasks: ['shell:phpTest', 'phpunit']
+      },
+      composer_json: {
+        files: [ 
+            '<%= yeoman.app %>/api/composer.json', 
+            '<%= yeoman.app %>/api/composer.lock' 
+        ],
+        tasks: [ 'composer:update' ],
       }
     },
 
