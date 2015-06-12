@@ -235,7 +235,7 @@ module.exports = function (grunt) {
                 {
                     expand: true, 
                     dot: true,
-                    src : '{,*/}*', 
+                    src : '**', 
                     cwd : '<%= yeoman.dist %>'
                 }
             ]
@@ -406,7 +406,11 @@ module.exports = function (grunt) {
             '!scripts/**',
             '!styles/**',
             '!tests/**',
-            '!api/tests/**'
+            '!api/tests/**',
+            '!images/android-icon-*.png',
+            '!images/favicon-*.png',
+            '!images/apple-icon*.png',
+            '!images/ms-icon-*.png'
           ],
           dest: '<%= yeoman.dist %>/'
       },
@@ -453,6 +457,9 @@ module.exports = function (grunt) {
 
     // Run some tasks in parallel to speed up the build process
     concurrent: {
+      options: {
+          limit: 3
+      },
       server: [
         'copy:styles'
       ],
