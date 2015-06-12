@@ -40,7 +40,9 @@ module.exports = function (grunt) {
   // Configurable paths for the application
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
-    dist: 'dist'
+    dist: 'dist',
+    public: 'public',
+    name: require('./bower.json').name
   };
 
   // Define the configuration for all the tasks
@@ -163,12 +165,12 @@ module.exports = function (grunt) {
       },
       server: {
         options: {
-          base: '<%= yeoman.app %>',
+          base: '<%= yeoman.app %>'
         }
       },
       dist: {
         options: {
-          base: '<%= yeoman.dist %>',
+          base: '<%= yeoman.dist %>'
         }
       }
     },
@@ -216,13 +218,29 @@ module.exports = function (grunt) {
           src: [
             '.tmp',
             '<%= yeoman.dist %>/{,*/}*',
+            '<%= yeoman.public %>/{,*/}*',
             '!<%= yeoman.dist %>/.git*'
           ]
         }]
       },
       server: '.tmp'
     },
-
+    // Zips the dist to a file
+    compress: {
+        dist: {
+            options: {
+                archive: '<%= yeoman.public %>/<%= yeoman.name %>.zip'
+            },
+            files: [
+                {
+                    expand: true, 
+                    dot: true,
+                    src : '{,*/}*', 
+                    cwd : '<%= yeoman.dist %>'
+                }
+            ]
+        }
+    },
     // Add vendor prefixed styles
     autoprefixer: {
       options: {
@@ -528,7 +546,8 @@ module.exports = function (grunt) {
     'uglify',
     'filerev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'compress'
   ]);
 
   grunt.registerTask('default', [
