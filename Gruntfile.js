@@ -382,7 +382,14 @@ module.exports = function (grunt) {
           expand: true,
           dot: true,
           cwd: '<%= yeoman.app %>',
-          src: '**',
+          src: [
+            '**',
+            '!bower_components/**',
+            '!scripts/**',
+            '!styles/**',
+            '!tests/**',
+            '!api/tests/**'
+          ],
           dest: '<%= yeoman.dist %>/'
       },
       dist2: {
