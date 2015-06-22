@@ -88,7 +88,7 @@ module.exports = function (grunt) {
       },
       phpTest: {
         files: ['<%= yeoman.app %>/api/{,{config,src,tests}/**/}/*'],
-        tasks: ['shell:phpTest', 'phpunit']
+        tasks: ['phpunit']
       },
       composer_json: {
         files: [ 
@@ -219,6 +219,7 @@ module.exports = function (grunt) {
             '.tmp',
             '<%= yeoman.dist %>/{,*/}*',
             '<%= yeoman.public %>/{,*/}*',
+            'build/{,*/}*',
             '!<%= yeoman.dist %>/.git*'
           ]
         }]
@@ -376,7 +377,7 @@ module.exports = function (grunt) {
     // ngmin tries to make the code safe for minification automatically by
     // using the Angular long form for dependency injection. It doesn't work on
     // things like resolve or inject so those have to be done manually.
-    ngmin: {
+    ngAnnotate: {
       dist: {
         files: [{
           expand: true,
@@ -529,24 +530,22 @@ module.exports = function (grunt) {
   grunt.registerTask('test', [
     'clean:server',
     'composer:update',
-    'shell:phpTest',
     'concurrent:test',
     'autoprefixer',
     'connect:test',
-    'karma',
-    'phpunit'
+    'phpunit',
+    'karma'
   ]);
 
   grunt.registerTask('build', [
     'clean:dist',
-    // 'shell:phpUpdate',
     'composer:update',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
     'concat',
-    'ngmin',
+    'ngAnnotate',
     'copy:dist',
     // 'cdnify',
     'cssmin',

@@ -9,4 +9,18 @@
             <directory>./app/api/tests/</directory>
         </testsuite>
     </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">app/api/config</directory>
+            <directory suffix=".php">app/api/src</directory>
+        </whitelist>
+    </filter>
+    <logging>
+        <log type="coverage-html" target="build/logs/coverage" charset="UTF-8"
+            yui="true" highlight="true"
+            lowUpperBound="50" highLowerBound="80"/>
+        <log type="testdox-html" target="build/logs/coverage/testdox.html" />
+        <log type="testdox-text" target="build/logs/coverage/testdox.txt"/>
+        <log type="coverage-text" target="php://stdout" showUncoveredFiles="false"/>
+    </logging>    
 </phpunit>
