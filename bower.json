@@ -1,6 +1,6 @@
 {
   "name": "e911",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {
     "angularLocalStorage": "~0.3.0",
     "angular": "~1.3.11",
