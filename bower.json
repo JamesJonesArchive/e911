@@ -1,6 +1,15 @@
 {
   "name": "e911",
-  "version": "0.0.2",
+  "version": "0.0.3",
+  "description": "University of South Florida 911 and E911 Disclosure, Notice, and Acknowledgement",
+  "authors": [
+    { "name": "James Jones", "email": "james@mail.usf.edu" },
+    { "name": "Eric Pierce", "email": "epierce@usf.edu" }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/USF-IT/e911.git"
+  },
   "dependencies": {
     "angularLocalStorage": "~0.3.0",
     "angular": "~1.3.11",
