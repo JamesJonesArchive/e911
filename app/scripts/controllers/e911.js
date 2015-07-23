@@ -26,18 +26,28 @@
             firstTop: ['panel', 'panel-default'],
             firstBottom: ['panel-body'],
             firstDisabled: false,
+            firstAcknowledged: false,
+            firstButtonText: 'I Acknowledge',
             secondTop: ['well'],
             secondBottom: [],
             secondDisabled: true,
+            secondAcknowledged: false,
+            secondButtonText: 'I Acknowledge',
             thirdTop: ['well'],
             thirdBottom: [],
             thirdDisabled: true,
+            thirdAcknowledged: false,
+            thirdButtonText: 'I Acknowledge',
             fourthTop: ['well'],
             fourthBottom: [],
             fourthDisabled: true,
+            fourthAcknowledged: false,
+            fourthButtonText: 'I Acknowledge',
             fifthTop: ['well'],
             fifthBottom: [],
             fifthDisabled: true,
+            fifthAcknowledged: false,
+            fifthButtonText: 'I Acknowledge',
             submitDisabled: true
         };
         $scope.e911sign = function() {
@@ -60,12 +70,13 @@
                     $scope.sections.firstTop.push('well');
                     $scope.sections.firstBottom.pop('panel-body');
                     $scope.sections.firstDisabled = true;
+                    $scope.sections.firstAcknowledged = true;
+                    $scope.sections.firstButtonText = 'Acknowledged';
                     $scope.sections.secondTop.pop('well');
                     $scope.sections.secondTop.push('panel');
                     $scope.sections.secondTop.push('panel-default');
                     $scope.sections.secondBottom.push('panel-body');
                     $scope.sections.secondDisabled = false;
-                    $window.document.getElementById('acknowledge2').scrollIntoView();
                     break;
                 case "second":
                     $scope.sections.secondTop.pop('panel');
@@ -73,13 +84,14 @@
                     $scope.sections.secondTop.push('well');
                     $scope.sections.secondBottom.pop('panel-body');
                     $scope.sections.secondDisabled = true;
+                    $scope.sections.secondAcknowledged = true;
+                    $scope.sections.secondButtonText = 'Acknowledged';
                     
                     $scope.sections.thirdTop.pop('well');
                     $scope.sections.thirdTop.push('panel');
                     $scope.sections.thirdTop.push('panel-default');
                     $scope.sections.thirdBottom.push('panel-body');
                     $scope.sections.thirdDisabled = false;
-                    $window.document.getElementById('acknowledge3').scrollIntoView();
                     break;
                 case "third":
                     $scope.sections.thirdTop.pop('panel');
@@ -87,13 +99,14 @@
                     $scope.sections.thirdTop.push('well');
                     $scope.sections.thirdBottom.pop('panel-body');
                     $scope.sections.thirdDisabled = true;
+                    $scope.sections.thirdAcknowledged = true;
+                    $scope.sections.thirdButtonText = 'Acknowledged';
                     
                     $scope.sections.fourthTop.pop('well');
                     $scope.sections.fourthTop.push('panel');
                     $scope.sections.fourthTop.push('panel-default');
                     $scope.sections.fourthBottom.push('panel-body');
                     $scope.sections.fourthDisabled = false;
-                    $window.document.getElementById('acknowledge4').scrollIntoView();
                     break;
                 case "fourth":
                     $scope.sections.fourthTop.pop('panel');
@@ -101,13 +114,14 @@
                     $scope.sections.fourthTop.push('well');
                     $scope.sections.fourthBottom.pop('panel-body');
                     $scope.sections.fourthDisabled = true;
+                    $scope.sections.fourthAcknowledged = true;
+                    $scope.sections.fourthButtonText = 'Acknowledged';
                     
                     $scope.sections.fifthTop.pop('well');
                     $scope.sections.fifthTop.push('panel');
                     $scope.sections.fifthTop.push('panel-default');
                     $scope.sections.fifthBottom.push('panel-body');
                     $scope.sections.fifthDisabled = false;
-                    $window.document.getElementById('acknowledge5').scrollIntoView();
                     break;
                 case "fifth":
                     $scope.sections.fifthTop.pop('panel');
@@ -115,9 +129,10 @@
                     $scope.sections.fifthTop.push('well');
                     $scope.sections.fifthBottom.pop('panel-body');
                     $scope.sections.fifthDisabled = true;
+                    $scope.sections.fifthAcknowledged = true;
+                    $scope.sections.fifthButtonText = 'Acknowledged';
                     
                     $scope.sections.submitDisabled = false;
-                    $window.document.getElementById('acknowledgeSubmit').scrollIntoView();
                     break;
             }
         };
