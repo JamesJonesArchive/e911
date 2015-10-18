@@ -3,7 +3,6 @@
 
     angular
     .module('e911App', [
-        'ngCookies',
         'ngResource',
         'ngSanitize',
         'ngRoute',
