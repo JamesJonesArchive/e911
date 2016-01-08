@@ -160,7 +160,7 @@ module.exports = function (grunt) {
         port: 8000,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: '127.0.0.1',
-        router: 'api/index.php'
+        router: 'app/api/index.php'
 
       },
       server: {

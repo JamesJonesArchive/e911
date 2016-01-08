@@ -1,6 +1,6 @@
 {
   "name": "e911",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "University of South Florida 911 and E911 Disclosure, Notice, and Acknowledgement",
   "authors": [
     { "name": "James Jones", "email": "james@mail.usf.edu" },
@@ -11,22 +11,22 @@
     "url": "https://github.com/USF-IT/e911.git"
   },
   "dependencies": {
-    "angular": "~1.4.7",
-    "json3": "~3.3.2",
-    "es5-shim": "~4.0.5",
-    "jquery": "~2.1.1",
-    "bootstrap": "~3.1.1",
-    "angular-resource": "~1.4.7",
-    "angular-sanitize": "~1.4.7",
-    "angular-route": "~1.4.7",
-    "angular-animate": "~1.4.7",
-    "font-awesome": "~4.3.0"
+    "angular": "1.4.7",
+    "json3": "3.3.2",
+    "es5-shim": "4.4.1",
+    "jquery": "2.1.4",
+    "bootstrap": "3.1.1",
+    "angular-resource": "1.4.7",
+    "angular-sanitize": "1.4.7",
+    "angular-route": "1.4.7",
+    "angular-animate": "1.4.7",
+    "font-awesome": "4.3.0"
   },
   "devDependencies": {
     "angular-mocks": "1.4.7",
     "angular-scenario": "1.4.7",
-    "html5shiv": "~3.7.2",
-    "respond": "~1.4.2"
+    "html5shiv": "3.7.3",
+    "respond": "1.4.2"
   },
   "appPath": "app",
   "resolutions": {

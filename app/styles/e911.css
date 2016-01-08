@@ -22,14 +22,14 @@ h2.e911 {
 }
 .vcenter2 {
     position: absolute;
-    // top: 50%;
+    /*  top: 50%; */
     transform: translateY(50%);
-    // border: 1px dashed deeppink;
+    /*  border: 1px dashed deeppink; */
 }
 .vcenter {
     display: inline-block;
     vertical-align: middle;
-    // float: none;
+    /* float: none; */
 }
 .badbutton { 
     max-width:100%; 
