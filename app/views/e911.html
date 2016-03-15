@@ -3,7 +3,7 @@
       <div class="text-center">
         <h2>University of South Florida 911 and E911 Disclosure, Notice, and Acknowledgement ("Acknowledgement")</h2>
       </div>
-      <div class="col-md-12">
+      <div class="col-md-12" tabindex="0">
         <p>
           You have been identified as a user of the Voice Over Internet Protocol ("VoIP") telephone service offered by the University of South Florida ("USF") (hereinafter "USF VoIP Service").
           The Federal Communications Commission ("FCC") has regulations that require USF, along with all VoIP service providers, to inform its users of any differences between the 911 and E911
@@ -28,61 +28,61 @@
 <div id="section2" class="container">
     <div class="row">
         <div class="col-md-12">
-            <h4>Your use of USF's VoIP Service is subject to the following VoIP 911 and E911 Service limitations <small>(please click <mark>I Acknowledge</mark> next to each limitation)</small></h4>
+            <h4 tabindex="0">Your use of USF's VoIP Service is subject to the following VoIP 911 and E911 Service limitations <small>(please click <mark>I Acknowledge</mark> next to each limitation)</small></h4>
         </div>
     </div>
     <div class="row" id="acknowledge1">
         <div class="panel panel-default col-md-offset-1 col-md-10" ng-class="sections.firstTop">
-        <div class="panel-body clearfix" ng-class="sections.firstBottom">
+        <div class="panel-body clearfix" ng-class="sections.firstBottom" tabindex="{{sections.firstNavigation}}">
           <strong>Emergency personnel may not be able to identify your phone number in order to call you back.</strong> PSAP and emergency personnel may not be able to identify your phone number in order to call you back
           if the call cannot be completed, is dropped or disconnected and/or if the USF VoIP Services or VoIP 911 or E911 Service is not operational for any reason.
           <br />
           <div class="pull-right">              
-              <button type="button" class="btn btn-sm" ng-class="{true: 'btn-default', false: 'btn-primary'}[sections.firstAcknowledged]" ng-disabled="sections.firstDisabled" ng-click="acknowledgeClasses('first')">{{sections.firstButtonText}}</button>
+              <button type="button" class="btn btn-sm" ng-class="{true: 'btn-default', false: 'btn-primary'}[sections.firstAcknowledged]" ng-disabled="sections.firstDisabled" ng-click="acknowledgeClasses('first')" tabindex="{{sections.firstNavigation}}">{{sections.firstButtonText}}</button>
           </div>
         </div>
       </div>
     </div>
     <div class="row" id="acknowledge2">
       <div class="well col-md-offset-1 col-md-10" ng-class="sections.secondTop">
-        <div class="clearfix" ng-class="sections.secondBottom">
+        <div class="clearfix" ng-class="sections.secondBottom" tabindex="{{sections.secondNavigation}}" focus-on="second">
           <strong>USF'S VoIP 911 and E911 service calls may be delayed or dropped due to network architecture or limitations.</strong> Due to technical constraints, there is a greater possibility of network congestion and/or
           reduced speed in the routing of a 911 call made utilizing your equipment as compared to traditional 911 dialing over traditional public switched telephone networks.
           <br />
           <div class="pull-right" ng-show="sections.firstAcknowledged">
-            <button type="button" class="btn btn-sm" ng-class="{true: 'btn-default', false: 'btn-primary'}[sections.secondAcknowledged]" ng-disabled="sections.secondDisabled" ng-click="acknowledgeClasses('second')">{{sections.secondButtonText}}</button>
+            <button type="button" class="btn btn-sm" ng-class="{true: 'btn-default', false: 'btn-primary'}[sections.secondAcknowledged]" ng-disabled="sections.secondDisabled" ng-click="acknowledgeClasses('second')" tabindex="{{sections.secondNavigation}}">{{sections.secondButtonText}}</button>
           </div>
         </div>
       </div>
     </div>
     <div class="row" id="acknowledge3">
       <div class="well col-md-offset-1 col-md-10" ng-class="sections.thirdTop">
-        <div class="clearfix" ng-class="sections.thirdBottom">
+        <div class="clearfix" ng-class="sections.thirdBottom" tabindex="{{sections.thirdNavigation}}" focus-on="third">
           <strong>VoIP 911 AND E911 service may not operate during a power outage.</strong> Should there be an interruption in the power at your physical location or to the infrastructure supporting USF's VoIP Service,
           the VoIP 911 and E911 Service, will not function until power is restored and your equipment is reset, as required.
           <br />
           <div class="pull-right" ng-show="sections.secondAcknowledged">
-            <button type="button" class="btn btn-sm" ng-class="{true: 'btn-default', false: 'btn-primary'}[sections.thirdAcknowledged]"  ng-disabled="sections.thirdDisabled" ng-click="acknowledgeClasses('third')">{{sections.thirdButtonText}}</button>
+            <button type="button" class="btn btn-sm" ng-class="{true: 'btn-default', false: 'btn-primary'}[sections.thirdAcknowledged]"  ng-disabled="sections.thirdDisabled" ng-click="acknowledgeClasses('third')" tabindex="{{sections.thirdNavigation}}">{{sections.thirdButtonText}}</button>
           </div>
         </div>
       </div>
     </div>
     <div class="row" id="acknowledge4">
       <div class="well col-md-offset-1 col-md-10" ng-class="sections.fourthTop">
-        <div class="clearfix" ng-class="sections.fourthBottom">
+        <div class="clearfix" ng-class="sections.fourthBottom" tabindex="{{sections.fourthNavigation}}" focus-on="fourth">
           <strong>USF'S VoIP 911 and E911 service will not operate if your network/Internet connection is disrupted.</strong> VoIP technology is provided through properly functioning network and/or Internet connectivity.
           Therefore, service outages, interruptions, network congestion or degradation, or termination or suspension for any reason, of network and/or Internet connectivity by your mobile wireless provider,
           local Internet service provider ("ISP"), or USF will prevent you from accessing USF's VoIP Service, including VoIP 911 and E911 Service.
           <br />
           <div class="pull-right" ng-show="sections.thirdAcknowledged">
-            <button type="button" class="btn btn-sm" ng-class="{true: 'btn-default', false: 'btn-primary'}[sections.fourthAcknowledged]" ng-disabled="sections.fourthDisabled" ng-click="acknowledgeClasses('fourth')">{{sections.fourthButtonText}}</button>
+            <button type="button" class="btn btn-sm" ng-class="{true: 'btn-default', false: 'btn-primary'}[sections.fourthAcknowledged]" ng-disabled="sections.fourthDisabled" ng-click="acknowledgeClasses('fourth')" tabindex="{{sections.fourthNavigation}}">{{sections.fourthButtonText}}</button>
           </div>
         </div>
       </div>
     </div>
     <div class="row" id="acknowledge5">
         <div class="well col-md-offset-1 col-md-10" ng-class="sections.fifthTop">
-            <div class="clearfix" ng-class="sections.fifthBottom">
+            <div class="clearfix" ng-class="sections.fifthBottom" tabindex="{{sections.fifthNavigation}}" focus-on="fifth">
           <strong>USF'S VoIP 911 and E911 service calls may not complete or may be routed to emergency personnel who will not be able to assist if you disable, damage, move the equipment to a location other than the registered
           business address assigned by USF, or access the services from a remote location, through a softphone, or on a mobile device.</strong> VoIP 911 and E911 Service does not function if you move your equipment to
           a different street address or physical location (other than the registered address assigned by USF), or access it through a softphone (a software application that allows you to make telephone calls
@@ -90,7 +90,7 @@
           being routed to the incorrect local emergency service provider and emergency personnel being dispatched to the incorrect location.
           <br />
           <span class="pull-right" ng-show="sections.fourthAcknowledged">
-            <button type="button" class="btn btn-sm" ng-class="{true: 'btn-default', false: 'btn-primary'}[sections.fifthAcknowledged]" ng-disabled="sections.fifthDisabled" ng-click="acknowledgeClasses('fifth')">{{sections.fifthButtonText}}</button>
+            <button type="button" class="btn btn-sm" ng-class="{true: 'btn-default', false: 'btn-primary'}[sections.fifthAcknowledged]" ng-disabled="sections.fifthDisabled" ng-click="acknowledgeClasses('fifth')" tabindex="{{sections.fifthNavigation}}">{{sections.fifthButtonText}}</button>
           </span>
         </div>
       </div>
@@ -99,7 +99,7 @@
 <hr />
 <div id="section3" class="container">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12" tabindex="{{sections.submitNavigation}}" focus-on="submit">
           <p>
             It is important to understand that while USF makes commercially reasonable efforts to provide reliable access to 911 and E911 to users of the USF VoIP Service, VoIP services have inherent limitations
             due to the networks, systems, and technology relied upon to implement such services as well as the mobile access capabilities of such services, all of which are beyond USF's control.
@@ -114,11 +114,11 @@
     </div>
   <hr />
     <div class="row" id="acknowledgeSubmit" ng-show="sections.fifthAcknowledged">
-        <div class="col-md-12">
+        <div class="col-md-12" tabindex="{{sections.submitNavigation}}">
             <br />
             <strong>By completing and submitting this form, you certify that you have received and understand the information contained in this Acknowledgement.</strong>
             <br />
-            <button type="button" ng-click="e911sign()" class="btn btn-primary btn-lg btn-block" ng-disabled="sections.submitDisabled">Submit</button>
+            <button type="button" ng-click="e911sign()" class="btn btn-primary btn-lg btn-block" ng-disabled="sections.submitDisabled" tabindex="{{sections.submitNavigation}}">Submit</button>
         </div>
       </div>
     </div>

@@ -6,7 +6,8 @@
         'ngResource',
         'ngSanitize',
         'ngRoute',
-        'ngAnimate'
+        'ngAnimate',
+        'ngAria'
     ])
     .config(function ($routeProvider) {
         $routeProvider
