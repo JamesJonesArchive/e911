@@ -16,14 +16,14 @@ module.exports = function (config) {
         // list of files / patterns to load in the browser
         files: [
             'bower_components/angular/angular.js',
+            'bower_components/json3/lib/json3.js',
+            'bower_components/es5-shim/es5-shim.js',
             'bower_components/angular-mocks/angular-mocks.js',
             'bower_components/angular-animate/angular-animate.js',
-            'bower_components/angular-cookies/angular-cookies.js',
             'bower_components/angular-resource/angular-resource.js',
             'bower_components/angular-route/angular-route.js',
             'bower_components/angular-sanitize/angular-sanitize.js',
-            'bower_components/angular-touch/angular-touch.js',
-            'bower_components/angularLocalStorage/src/angularLocalStorage.js',
+            'bower_components/angular-aria/angular-aria.js',
             'scripts/**/*.js',
             'tests/**/*.js'
         ],
@@ -43,6 +43,7 @@ module.exports = function (config) {
         // Which plugins to enable
         plugins: [
             'karma-phantomjs-launcher',
+            'karma-firefox-launcher',
             'karma-jasmine'
         ],
         // Continuous Integration mode
