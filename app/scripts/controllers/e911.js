@@ -22,6 +22,9 @@
         if('id' in $routeParams) {
             $scope.id = $routeParams.id;
         }
+        $timeout(function() {
+            $rootScope.$broadcast('focusOn','title');
+        });
         $scope.sections = {
             firstTop: ['panel', 'panel-default'],
             firstBottom: ['panel-body'],
