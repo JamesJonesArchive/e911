@@ -42,9 +42,13 @@ module.exports = function (grunt) {
     app: require('./bower.json').appPath || 'app',
     dist: 'dist',
     public: 'public',
-    name: require('./bower.json').name
+    name: require('./package.json').name,
+    version: require('./package.json').version,
+    release: require('./package.json').release,
+    description: require('./package.json').description,
+    homepage: require('./package.json').homepage,
+    license: require('./package.json').license
   };
-
   // Define the configuration for all the tasks
   grunt.initConfig({
 
@@ -475,17 +479,31 @@ module.exports = function (grunt) {
     },
 
     shell: {
-      options: {
-        stdout: true,
-        stderr: true,
-        failOnError: true
-      },
-      phpTest: {
-        command: 'make --directory <%= yeoman.app %>/api tests'
-      },
-      phpUpdate: {
-        command: 'make --directory <%= yeoman.app %>/api update'
-      }
+        options: {
+          stdout: true,
+          stderr: true,
+          failOnError: true
+        },
+        phpTest: {
+          command: 'make --directory <%= yeoman.app %>/api tests'
+        },
+        phpUpdate: {
+          command: 'make --directory <%= yeoman.app %>/api update'
+        },
+        for_centos7: {
+            "command": [
+                [
+                    '/usr/local/bin/fpm -s dir -t rpm -n \'<%= yeoman.name %>\' -v <%= yeoman.version %> '
+                ].join(' -d '),
+                '--description "<%= yeoman.description %>"',
+                '--url "<%= yeoman.homepage %>"',
+                '--license "<%= yeoman.license %>"',
+                '--vendor "University of South Florida"',
+                '--iteration "<%= yeoman.release %>"',
+                '--config-files /usr/local/etc/idm_config/e911.yml',
+                '-p public ./dist/.=/opt/site/e911 ./config/e911.yml=/usr/local/etc/idm_config/e911.yml'
+            ].join(' ')
+        }
     },
 
     // Test settings

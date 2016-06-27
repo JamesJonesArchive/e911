@@ -1,6 +1,7 @@
 {
   "name": "e911",
-  "version": "0.0.5",
+  "version": "0.0.5",  
+  "release": "1",
   "description": "University of South Florida 911 and E911 Disclosure, Notice, and Acknowledgement",
   "author": "James Jones <james@mail.usf.edu>",
   "contributors": [{
@@ -8,6 +9,7 @@
     "email": "epierce@usf.edu"
   }],
  "license" : "Apache-2.0",
+ "homepage": "https://github.com/USF-IT/e911",
  "repository": {
     "type": "git",
     "url": "https://github.com/USF-IT/e911"
