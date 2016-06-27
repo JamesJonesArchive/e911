@@ -1,0 +1,5 @@
+---
+# E911 configuration
+e911Config:
+    secretKey: 12345678909876543210123456789
+    unaService: https://una.usf.edu/
