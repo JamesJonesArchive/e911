@@ -490,6 +490,9 @@ module.exports = function (grunt) {
         phpUpdate: {
           command: 'make --directory <%= yeoman.app %>/api update'
         },
+        mkpublic: {
+            command: 'mkdir -p public'
+        },
         for_centos7: {
             "command": [
                 [
@@ -576,6 +579,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('dist', [
     'clean:dist',
+    'shell:mkpublic',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
