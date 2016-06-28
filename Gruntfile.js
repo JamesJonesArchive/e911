@@ -574,6 +574,22 @@ module.exports = function (grunt) {
     'compress'
   ]);
 
+  grunt.registerTask('dist', [
+    'clean:dist',
+    'wiredep',
+    'useminPrepare',
+    'concurrent:dist',
+    'autoprefixer',
+    'concat',
+    'ngAnnotate',
+    'copy:dist',
+    'cssmin',
+    'uglify',
+    'filerev',
+    'usemin',
+    'htmlmin'
+  ]);
+  
   grunt.registerTask('default', [
     'composer:update',
     'newer:jshint'
