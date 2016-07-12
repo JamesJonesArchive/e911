@@ -505,7 +505,7 @@ module.exports = function (grunt) {
                 '--url "<%= yeoman.homepage %>"',
                 '--license "<%= yeoman.license %>"',
                 '--vendor "University of South Florida"',
-                '--iteration "<%= yeoman.release %>"',
+                '--iteration "<%= yeoman.release %>".el7',
                 '--config-files /usr/local/etc/idm_config/e911.yml',
                 '-p public ./dist/.=/opt/site/e911 ./config/e911.yml=/usr/local/etc/idm_config/e911.yml'
             ].join(' ')
